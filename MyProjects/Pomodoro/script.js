@@ -16,15 +16,15 @@ window.onload = () =>{
     workTitle.classList.add('active');
 }
 
-//start timer
+//empezar temporizador
 
 function start(){
-    //change button
+    //cambiar boton
     document.getElementById('start').style.display = 'none';
     document.getElementById('reset').style.display = 'block';
 
 
-    //change the time
+    //cambiar el tiempo
     seconds = 59;
 
     let workMinutes = workTime - 1;
@@ -32,33 +32,33 @@ function start(){
 
     breakCount = 0;
 
-    //countdown
+    //cuenta atras
 
     let timerFunction =() =>{
-        //change the display
+        //cambiar el display
         document.getElementById('minutos').innerHTML = workMinutes;
         document.getElementById('segundos').innerHTML = seconds;
 
-        //start
+        //comenzar
         seconds = seconds -1;
 
         if(seconds ===0){
             workMinutes = workMinutes -1;
             if(workMinutes===-1){
                 if(breakCount%2===0){
-                    //start break
+                    //comenzar descanso
                     workMinutes = breakMinutes;
                     breakCount++
 
-                    //change the panel
+                    //cambiar panel
                     workTitle.classList.remove('active');
                     breakTitle.classList.add('active');
                 }else{
-                    //continue work
+                    //continuar estudio
                     workMinutes = workTime;
                     breakCount++
 
-                    //change the panel
+                    //camiar panel
                     breakTitle.classList.remove('active');
                     workTitle.classList.add('active');
                 }
@@ -67,7 +67,7 @@ function start(){
         }
     }
 
-    //start countdown
+    //comenzar cuenta atras
 
     setInterval(timerFunction, 1000); //1000 = 1s
 
