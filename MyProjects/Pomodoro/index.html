@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pomodoro timer</title>
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap" rel="stylesheet">
+
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/48da3793f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section>
+        <div class="contenedor">
+            <h1>Pomodoro</h1>
+            <div class="panel">
+                <p id="estudio">Estudio</p>
+                <p id="descanso">Descanso</p>
+            </div>
+            
+            <div class="temporizador">
+                <div class="circulo">
+                    <div class="tiempo">
+                        <p id="minutos"></p>
+                        <p>:</p>
+                        <p id="segundos"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controles">
+                <button id="start" onclick="start()"><i class="fa-solid fa-play"></i></button>
+                
+                <a id="reset" href="./"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
