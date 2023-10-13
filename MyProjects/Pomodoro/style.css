@@ -1,19 +1,20 @@
 :root{
     font-size: 62.5%;
-    --color-primario: #333;
-    --color-secundario: #ff4290;
-    --color-fuente: whitesmoke;
-    --color-sombra: #6f6f6f;
+    --color-sombra: rgb(105, 125, 142);
+    --color-primario: #BFD4E5ff;
+    --color-secundario: #FE4B47ff;
+    --color-fuente: #3A2739ff;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: 100ms;
 }
 
 html, body{
-
+    min-width: 365px;
     height: 100%;
     background-color: var(--color-primario);
     font-size: 1.6rem;
@@ -37,9 +38,14 @@ h1{
 section{
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 90%;
 }
-
+section.darkmode-switch{
+    justify-content: end;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+}
 .contenedor{
     width: min(42.5rem, 100%);
     margin-inline: auto;
@@ -50,6 +56,28 @@ section{
     flex-direction: column;
 }
 
+.darkmode{
+    background-color: var(--color-fuente);
+    position: relative;
+    height: 40px;
+    width: 80px;
+    margin-top: 5rem;
+    margin-right: 3rem;
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+.toggle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    transform: scale(.7);
+    background-color: var(--color-primario);
+    border-radius: 50%;
+
+}
 .panel{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -121,10 +149,12 @@ section{
 }
 
 .controles{
+    transition: 200ms ease ;
     margin-top: 3rem;
 }
 
 .controles button{
+    transition: 200ms ease;
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -132,4 +162,14 @@ section{
 
 .controles #reset{
     display: none;
+}
+#darkmode.disabled .toggle{
+    transition: 300ms ease;
+    right: 40px;
+    left: 0px;
+}
+#darkmode.active .toggle{
+    transition: 300ms ease;
+    right: 0px;
+    left: 40px;
 }
