@@ -1,2 +1,2 @@
 # PrimerRepo
-Mi primer repositorio, pillad loq ue querais de aqui.
+Mi primer repositorio, pillad lo que querais de aqui.
